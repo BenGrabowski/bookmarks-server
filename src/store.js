@@ -1,6 +1,7 @@
 const bookmarks = [
     {
-        "test": "this is a test"
+        "test": "this is a test",
+        "id": "1234"
     }
 ]
 
