@@ -7,3 +7,8 @@
 {"message":"Bookmark with id ea3b4134-883f-4e02-a112-12f648bdc186 created","level":"info"}
 {"message":"Bookmark with id fbbb6a58-79fc-415a-8472-e3ca73a03b0e created","level":"info"}
 {"message":"Bookmark with id 1234 deleted","level":"info"}
+{"message":"Bookmark with id 5c0d8b88-3a7c-45ee-aa7d-adb5f3cd2ae4 created","level":"info"}
+{"message":"Bookmark with id 31d35c35-c9cc-470f-a444-3f6aa5c5c483 not found","level":"error"}
+{"message":"Bookmark with id c357960e-e942-493c-b85b-55b883faf1f3 deleted","level":"info"}
+{"message":"Bookmark with id 82d7b380-ed79-4c76-8301-1ef2dbdede95 created","level":"info"}
+{"message":"Bookmark with id 82d7b380-ed79-4c76-8301-1ef2dbdede95 deleted","level":"info"}
