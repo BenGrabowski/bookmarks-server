@@ -12,3 +12,7 @@
 {"message":"Bookmark with id c357960e-e942-493c-b85b-55b883faf1f3 deleted","level":"info"}
 {"message":"Bookmark with id 82d7b380-ed79-4c76-8301-1ef2dbdede95 created","level":"info"}
 {"message":"Bookmark with id 82d7b380-ed79-4c76-8301-1ef2dbdede95 deleted","level":"info"}
+{"message":"Unauthorized request to path /bookmarks","level":"error"}
+{"message":"Unauthorized request to path /bookmarks","level":"error"}
+{"message":"Unauthorized request to path /bookmarks/","level":"error"}
+{"message":"Unauthorized request to path /bookmarks/","level":"error"}
