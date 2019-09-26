@@ -1,7 +1,7 @@
 drop table if exists bookmarks;
 
 create table bookmarks (
-    id UUID PRIMARY KEY DEFAULT uuid_v4(),
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     title text NOT NULL,
     url text NOT NULL,
     rating INTEGER,
