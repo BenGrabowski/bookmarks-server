@@ -86,7 +86,7 @@ describe.only('Bookmarks Endpoints', () => {
                 const bookmarkId = 2
                 const expectedBookmark = bookmarkArray[bookmarkId -1]
                 return supertest(app)
-                    .get(`bookmarks/${bookmarkId}`)
+                    .get(`/bookmarks/${bookmarkId}`)
                     .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(200, expectedBookmark)
             })
