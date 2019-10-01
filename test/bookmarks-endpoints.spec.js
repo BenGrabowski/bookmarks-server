@@ -57,6 +57,7 @@ describe.only('Bookmarks Endpoints', () => {
             it('GET /bookmarks responds with 200 and all of the bookmarks', () => {
                 return supertest(app)
                     .get('/bookmarks')
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(200, bookmarkArray)
             })
         })
@@ -67,6 +68,7 @@ describe.only('Bookmarks Endpoints', () => {
             it(`responds with 404 when book mark doesn't exist`, () => {
                 supertest(app)
                     .get(`/bookmarks/123`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(404, { error: { message: `Bookmark doesn't exist` } })
             })
         })
@@ -85,6 +87,7 @@ describe.only('Bookmarks Endpoints', () => {
                 const expectedBookmark = bookmarkArray[bookmarkId -1]
                 return supertest(app)
                     .get(`bookmarks/${bookmarkId}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(200, expectedBookmark)
             })
         })
