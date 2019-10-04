@@ -24,6 +24,29 @@ function makeBookmarksArray() {
     ]
 }
 
+function makeMaliciousBookmark() {
+    const maliciousBookmark = {
+        id: 911,
+        title: 'Malicious Bookmark title',
+        url: 'www.malicious-article.com <script>Attack</script>',
+        rating: 1,
+        description: `Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
+    }
+
+    const expectedBookmark = {
+        ...maliciousBookmark,
+        url: 'www.malicious-article.com &lt;script&gt;Attack&lt;/script&gt;',
+        description: `Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`
+
+    }
+
+    return {
+        maliciousBookmark,
+        expectedBookmark
+    }
+}
+
 module.exports = {
     makeBookmarksArray,
+    makeMaliciousBookmark
 }
