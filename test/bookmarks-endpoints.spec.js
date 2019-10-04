@@ -174,9 +174,10 @@ describe.only('Bookmarks Endpoints', () => {
 
                 return supertest(app)
                     .post('/bookmarks')
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .send(newBookmark)
                     .expect(400, {
-                        error: { message: `Missing ${field} in request body` }
+                        error: { message: `Missing '${field}' in request body` }
                     })
             })
         })
@@ -198,6 +199,7 @@ describe.only('Bookmarks Endpoints', () => {
                 const expectedBookmarks = testBookmarks.filter(bookmark => bookmark.id !== idToRemove)
                 return supertest(app)
                     .delete(`/bookmarks/${idToRemove}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(204)
                     .then(res => {
                         supertest(app)
@@ -212,6 +214,7 @@ describe.only('Bookmarks Endpoints', () => {
                 const bookmarkId = 123456
                 return supertest(app)
                     .delete(`/bookmarks/${bookmarkId}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(404, { error: { message: `Bookmark doesn't exist` } })
             })
         })
