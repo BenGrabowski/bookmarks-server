@@ -64,15 +64,9 @@ bookmarksRouter
                     .status(201)
                     .location(`/bookmarks/${bookmark.id}`)
                     .json(sanitizeBookmark(bookmark))
+                    logger.info(`Bookmark with id ${bookmark.id} created`)
             })
             .catch(next)
-        
-        logger.info(`Bookmark with id ${id} created`)
-    
-        res
-            .status(201)
-            .location(`http://localhost:8000/bookmarks/${id}`)
-            .json(bookmark)
     })
 
 bookmarksRouter

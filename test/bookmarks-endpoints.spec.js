@@ -89,12 +89,12 @@ describe.only('Bookmarks Endpoints', () => {
 
             it('removes XSS attack content', () => {
                 return supertest(app)
-                    .get('/articles')
+                    .get('/bookmarks')
                     .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(200)
                     .expect(res => {
                         expect(res.body[0].title).to.eql(expectedBookmark.title)
-                        expect(res.body[0].url).to.eql(expectedBookmark.content)
+                        expect(res.body[0].url).to.eql(expectedBookmark.url)
                         expect(res.body[0].description).to.eql(expectedBookmark.description)
                     })
             })
@@ -151,11 +151,12 @@ describe.only('Bookmarks Endpoints', () => {
                     expect(res.body.rating).to.eql(newBookmark.rating)
                     expect(res.body.description).to.eql(newBookmark.description)
                     expect(res.body).to.have.property('id')
-                    expect(res.headers.location).to.eql(`http://localhost:8000/bookmarks/${res.body.id}`)
+                    expect(res.headers.location).to.eql(`/bookmarks/${res.body.id}`)
                 })
                 .then(postRes =>
                     supertest(app)
-                    .get(`/bookmarks/${postRes.body.id}`)    
+                    .get(`/bookmarks/${postRes.body.id}`)
+                    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .expect(postRes.body)
                 )
         })
