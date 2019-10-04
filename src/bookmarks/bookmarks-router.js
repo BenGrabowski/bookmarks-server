@@ -17,6 +17,7 @@ const sanitizeBookmark = bookmark => ({
 
 bookmarksRouter
     .route('/bookmarks')
+    .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
     .get((req, res, next) => {
         BookmarksService.getAllBookmarks(req.app.get('db'))
             .then(bookmarks => {
