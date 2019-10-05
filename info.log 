@@ -201,3 +201,4 @@
 {"message":"Unauthorized request to path /bookmarks","level":"error"}
 {"message":"Unauthorized request to path /bookmarks/2","level":"error"}
 {"message":"Bookmark with id 1 created","level":"info"}
+{"message":"Unauthorized request to path /api/bookmarks/123456","level":"error"}
