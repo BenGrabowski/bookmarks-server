@@ -17,7 +17,7 @@ const sanitizeBookmark = bookmark => ({
 })
 
 bookmarksRouter
-    .route('/bookmarks')
+    .route('/')
     .get((req, res, next) => {
         BookmarksService.getAllBookmarks(req.app.get('db'))
             .then(bookmarks => {
@@ -62,7 +62,7 @@ bookmarksRouter
     })
 
 bookmarksRouter
-    .route('/bookmarks/:id')
+    .route('/:id')
     .all((req, res, next) => {
         BookmarksService.getById(
             req.app.get('db'),
@@ -100,7 +100,7 @@ bookmarksRouter
         if (numberOfValues === 0)  {
             return res.status(400).json({
                 error: {
-                    message: `Request body must contain either 'title', 'url', 'rating', or description'`
+                    message: `Request body must contain either 'title', 'url', 'rating', or 'description'`
                 }
             })
         }
